@@ -136,6 +136,9 @@ spec:
                     dir('app') {
                         echo '🚀 Executando smoke test...'
                         sh '''
+                            # Instalar curl (Alpine Linux)
+                            apk add --no-cache curl
+                            
                             # Iniciar aplicação em background
                             npm start &
                             APP_PID=$!
